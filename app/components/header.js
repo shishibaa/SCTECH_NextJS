@@ -86,7 +86,7 @@ export default function Header() {
                         className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#3A5E98] to-[#7e96c0] text-white px-4 py-2 rounded-xl shadow-lg border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:from-lightblue1 hover:to-lightblue2 hover:text-fontcolor"
                     >
                         ขอใบเสนอราคา
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                             <path
                                 d="M13.5 4.5a.75.75 0 0 0-1.5 0v6.75H5.25a.75.75 0 0 0 0 1.5H12v6.75a.75.75 0 0 0 1.5 0V12.75h6.75a.75.75 0 0 0 0-1.5H13.5V4.5Z" />
                         </svg>
