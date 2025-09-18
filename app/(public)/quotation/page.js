@@ -1,15 +1,7 @@
 'use client';
 
 import React, { useMemo, useRef, useState } from 'react';
-
-function SectionHeading({ heading, paragraph }) {
-  return (
-    <div className="space-y-2">
-      <h1 className="text-2xl sm:text-3xl font-bold text-[#0F3460]">{heading}</h1>
-      {paragraph ? <p className="text-slate-600">{paragraph}</p> : null}
-    </div>
-  );
-}
+import SectionHeading from '@/app/components/sectionHeading';
 
 function makeItem() {
   return { id: Math.random().toString(36).slice(2), name: '', qty: 1, unit: '', unitPrice: 0 };
@@ -242,6 +234,7 @@ export default function QuotationPage() {
         <header className="text-center mb-8 sm:mb-10">
           <SectionHeading heading="ขอใบเสนอราคา" paragraph="กรอกข้อมูลให้ครบถ้วน ทีมงานจะติดต่อกลับพร้อมใบเสนอราคา" />
         </header>
+        
 
         {/* Grid: form + summary */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">

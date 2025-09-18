@@ -1,7 +1,7 @@
-export default function SectionHeading({ heading, paragraph }) {
+export default function sectionHeading({ heading, paragraph }) {
   return (
     <>
-      <h1 className="mx-auto text-center mb-3">
+      <h1 className="mx-auto text-center">
         <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-fontcolor to-secondary">
           {heading}
         </span>
@@ -12,6 +12,8 @@ export default function SectionHeading({ heading, paragraph }) {
           {paragraph}
         </p>
       )}
+           
+
     </>
   )
 }

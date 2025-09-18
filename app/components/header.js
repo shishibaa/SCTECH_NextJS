@@ -95,32 +95,36 @@ export default function Header() {
             </nav>
 
             {/* Mobile nav */}
-            {isOpen && (
-                <div className="md:hidden bg-white/90 backdrop-blur-md shadow-md">
-                    <ul className="pt-3 pb-2 space-y-2 text-fontcolor text-base">
-                        {links.map((l) => (
-                            <li key={l.href}>
-                                <Link
-                                    href={l.href}
-                                    className="block px-2 py-2 rounded-lg transition-colors duration-200 hover:bg-secondary/10"
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    {l.label}
-                                </Link>
-                            </li>
-                        ))}
-                        <li>
+            <div
+                className={`
+    md:hidden bg-primary backdrop-blur-md shadow-md 
+    transition-all  duration-500 animate-fade-down origin-top
+    ${isOpen ? "max-h-96 opacity-100 scale-y-100" : "max-h-0 opacity-0 scale-y-0 overflow-hidden"}
+  `}
+            >
+                <ul className="pt-3 pb-2 space-y-2 text-fontcolor text-base">
+                    {links.map((l) => (
+                        <li key={l.href}>
                             <Link
-                                href="/quotation"
+                                href={l.href}
                                 className="block px-2 py-2 rounded-lg transition-colors duration-200 hover:bg-secondary/10"
                                 onClick={() => setIsOpen(false)}
                             >
-                                ขอใบเสนอราคา
+                                {l.label}
                             </Link>
                         </li>
-                    </ul>
-                </div>
-            )}
+                    ))}
+                    <li>
+                        <Link
+                            href="/quotation"
+                            className="block px-2 py-2 rounded-lg transition-colors duration-200 hover:bg-secondary/10"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            ขอใบเสนอราคา
+                        </Link>
+                    </li>
+                </ul>
+            </div>
         </header>
     )
 }
