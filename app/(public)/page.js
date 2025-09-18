@@ -1,11 +1,14 @@
 'use client'
-import clientOnly from 'client-only'
-import hero from '@/public/womans-hands-typing-laptop-workplace.jpg'
 import Image from 'next/image'
 import Link from 'next/link'
 import BaseButton from '@/app/components/baseButton'
 import ServiceCard from '@/app/components/serviceCard'
 import MapCard from '@/app/components/mapCard'
+
+import heroImg from '@/public/womans-hands-typing-laptop-workplace.jpg'
+import aboutImg from '@/public/top-view-woman-s-hands-working-with-laptop.jpg'
+
+
 
 export default function HomePage() {
   return (
@@ -13,8 +16,8 @@ export default function HomePage() {
       {/* HERO section */}
       <section className="relative min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh]">
         <Image
-          src={hero}
-          alt=""
+          src={heroImg}
+          alt="Hero background"
           fill
           priority
           placeholder="blur"
@@ -33,9 +36,11 @@ export default function HomePage() {
               height={80}
               priority
             />
+
             <h1 id="hero-title" className="text-white drop-shadow text-xl sm:text-2xl md:text-2xl lg:text-4xl tracking-tight mb-[5px] font-semibold">
               <span>SC TECH (2025) LIMITED PARTNERSHIP</span>
             </h1>
+
             <p className="text-white/95 drop-shadow text-lg sm:text-xl md:text-2xl leading-relaxed mb-[0px]">
               สร้างสรรค์และนำเสนอเทคโนโลยีที่ทันสมัย
               <br className="hidden md:inline" />
@@ -52,6 +57,35 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ABOUT section */}
+      <section className="animate-fade-up animate-once animate-ease-in bg-gradient-to-b from-[#FFFFFF] via-[#F5F5F5] to-[#D1E0F6]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl text-center lg:text-left lg:col-start-1 lg:row-start-1 m-2 font-extrabold">
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-fontcolor to-secondary">เกี่ยวกับเรา</span>
+            </h1>
+            <br />
+            <Image
+              src={aboutImg}
+              alt="ภาพเกี่ยวกับเรา"
+              className="w-full rounded-xl object-cover shadow-md mx-auto lg:col-start-2 lg:row-span-2"
+              placeholder="blur"
+              sizes="(min-width:1024px) 50vw, 100vw"
+              priority={false}
+            />
+
+            <p className="m-3 text-fontcolor leading-relaxed text-base sm:text-lg md:text-xl lg:text-2xl text-center lg:text-left lg:col-start-1 lg:row-start-2">
+              ผู้นำในด้านการพัฒนาแอพพลิเคชันให้บริการโซลูชันไอทีที่เชื่อถือได้และมีคุณภาพสูง
+              <span className="block mt-2">สร้างสรรค์และนำเสนอเทคโนโลยีที่ทันสมัย เพื่อสนับสนุนการเติบโตของลูกค้าและชุมชน</span>
+              <span className="block mt-4">มุ่งหวังที่จะเป็นพาร์ทเนอร์ที่ลูกค้าสามารถไว้วางใจได้ ในการเดินทางสู่อนาคตที่ใช้เทคโนโลยีเป็นหัวใจหลักในการพัฒนาปรับปรุงองค์กรและธุรกิจ</span>
+
+              <span className="w-full flex justify-center lg:justify-start lg:col-start-1 lg:row-start-3">
+                <BaseButton to="/about" label="ดูเพิ่มเติม" />
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* SERVICE section */}
       <section className="service-section w-full shadow-lg animate-fade-up animate-once animate-ease-in bg-cover bg-center py-16 px-4 sm:px-6 lg:px-8">
@@ -110,6 +144,10 @@ export default function HomePage() {
           email="sctech95@gmail.com"
         />
       </section>
+
+      <style jsx global>{`
+        .service-section { background-color: #ffffff; }
+      `}</style>
     </main>
   )
 }
